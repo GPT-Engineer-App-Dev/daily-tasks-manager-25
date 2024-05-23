@@ -1,22 +1,15 @@
-import { Box, Flex, Link } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { HStack, Button } from "@chakra-ui/react";
 
-const Navbar = () => (
-  <Box bg="teal.500" px={4} py={2}>
-    <Flex justify="space-between" align="center">
-      <Link as={NavLink} to="/" color="white" fontSize="xl" fontWeight="bold">
-        Todo App
-      </Link>
-      <Flex>
-        <Link as={NavLink} to="/" color="white" mx={2}>
-          Home
-        </Link>
-        <Link as={NavLink} to="/about" color="white" mx={2}>
-          About
-        </Link>
-      </Flex>
-    </Flex>
-  </Box>
-);
+const Navbar = () => {
+  return (
+    <HStack spacing={4} p={4} bg="teal.500" color="white">
+      <Button as={Link} to="/" variant="ghost" colorScheme="teal">Home</Button>
+      <Button as={Link} to="/about" variant="ghost" colorScheme="teal">About</Button>
+      <Button as={Link} to="/contact" variant="ghost" colorScheme="teal">Contact</Button>
+      <Button as={Link} to="/login" variant="ghost" colorScheme="teal">Login</Button>
+    </HStack>
+  );
+};
 
 export default Navbar;
